@@ -1,18 +1,15 @@
 package app.telas;
 
-// ListPanel.java
 import javax.swing.*;
 import java.awt.*;
 
 public class LPanel extends JPanel {
     public LPanel() {
-        setLayout(new BorderLayout());
         setBorder(BorderFactory.createTitledBorder("Lista de Itens"));
+        setLayout(new BorderLayout(5,5));
 
-        String[] itens = {"Item 1", "Item 2", "Item 3", "Item 4"};
-        JList<String> list = new JList<>(itens);
-        JScrollPane scrollPane = new JScrollPane(list);
-        add(scrollPane, BorderLayout.CENTER);
+        String[] items = {"Cliente","Fornecedor","Parceiro"};
+        JList<String> list = new JList<>(items);
+        add(new JScrollPane(list), BorderLayout.CENTER);
     }
 }
-

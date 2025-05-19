@@ -1,42 +1,36 @@
 package app.telas;
 
-// MainFrame.java
 import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
     public MainFrame() {
         setTitle("Protótipo de Sistema");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(800,600);
         setLocationRelativeTo(null);
 
         setJMenuBar(createMenuBar());
+        FPanel f = new FPanel();
+        TPanel t = new TPanel();
+        LPanel l = new LPanel();
 
-        JPanel mainPanel = new JPanel(new BorderLayout());
+        JSplitPane split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, t, l);
+        split.setResizeWeight(0.5);
 
-        FPanel formPanel = new FPanel();
-        TPanel tablePanel = new TPanel();
-        LPanel listPanel = new LPanel();
-
-        JPanel centerPanel = new JPanel(new GridLayout(1, 2));
-        centerPanel.add(tablePanel);
-        centerPanel.add(listPanel);
-
-        mainPanel.add(formPanel, BorderLayout.NORTH);
-        mainPanel.add(centerPanel, BorderLayout.CENTER);
-
-        add(mainPanel);
+        getContentPane().setLayout(new BorderLayout(10,10));
+        getContentPane().add(f, BorderLayout.NORTH);
+        getContentPane().add(split, BorderLayout.CENTER);
+        ((JComponent)getContentPane()).setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
     }
 
     private JMenuBar createMenuBar() {
-        JMenuBar menuBar = new JMenuBar();
-        JMenu fileMenu = new JMenu("Arquivo");
-        JMenuItem exitItem = new JMenuItem("Sair");
-        exitItem.addActionListener(e -> System.exit(0));
-        fileMenu.add(exitItem);
-        menuBar.add(fileMenu);
-        return menuBar;
+        JMenuBar mb = new JMenuBar();
+        JMenu m = new JMenu("Arquivo");
+        JMenuItem exit = new JMenuItem("Sair");
+        exit.addActionListener(e -> System.exit(0));
+        m.add(exit);
+        mb.add(m);
+        return mb;
     }
 }
-
