@@ -7,9 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class FiltroFuncaoFrame extends JFrame {
+public class FiltroFuncao extends JFrame {
 
-    public FiltroFuncaoFrame(String funcaoFiltrada) {
+    public FiltroFuncao(String funcaoFiltrada) {
         setTitle("Filtrado por: " + funcaoFiltrada);
         setSize(500, 300);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

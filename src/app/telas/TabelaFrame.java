@@ -39,7 +39,7 @@ public class TabelaFrame extends JFrame {
     }
 
     private void abrirFiltroPorFuncao(String funcao) {
-        FiltroFuncaoFrame filtroFrame = new FiltroFuncaoFrame(funcao);
+        FiltroFuncao filtroFrame = new FiltroFuncao(funcao);
         filtroFrame.setVisible(true);
     }
 }
