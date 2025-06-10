@@ -29,7 +29,12 @@ public class FiltroFuncao extends JFrame {
             dados[i][4] = p.getSexo();
         }
 
-        JTable tabela = new JTable(dados, colunas);
+        JTable tabela = new JTable(dados, colunas) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         painel.add(new JScrollPane(tabela), BorderLayout.CENTER);
 
         getContentPane().add(painel);

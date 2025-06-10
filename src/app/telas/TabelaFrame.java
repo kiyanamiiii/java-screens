@@ -42,4 +42,6 @@ public class TabelaFrame extends JFrame {
         FiltroFuncao filtroFrame = new FiltroFuncao(funcao);
         filtroFrame.setVisible(true);
     }
+
+
 }

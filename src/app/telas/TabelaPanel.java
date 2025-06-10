@@ -25,7 +25,13 @@ public class TabelaPanel extends JPanel {
             dados[i][4] = p.getSexo();
         }
 
-        JTable tabela = new JTable(dados, colunas);
+        JTable tabela = new JTable(dados, colunas) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+
+        };
         add(new JScrollPane(tabela), BorderLayout.CENTER);
     }
 }
